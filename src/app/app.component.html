@@ -124,6 +124,25 @@
           >
         </bal-field>
 
+        <bal-field expanded>
+          <bal-field-label text="Comment"></bal-field-label>
+          <bal-field-control>
+            <bal-textarea
+              formControlName="comment"
+              name="comment"
+              placeholder="Enter your comment"
+            ></bal-textarea>
+          </bal-field-control>
+          <bal-field-message
+            color="danger"
+            *ngIf="
+              form.get('comment').errors &&
+              form.get('comment').hasError('required')
+            "
+            >Required Field</bal-field-message
+          >
+        </bal-field>
+
         <p id="firstname-value" class="is-flex-grow-1 is-full-widt">
           {{ form.get("name").value }}
         </p>
@@ -138,6 +157,9 @@
         </p>
         <p id="checkbox-value" class="is-flex-grow-1 is-full-width">
           {{ form.get("checkbox").value }}
+        </p>
+        <p id="comment-value" class="is-flex-grow-1 is-full-width">
+          {{ form.get("comment").value }}
         </p>
       </bal-card-content>
       <bal-card-actions>

@@ -17,6 +17,7 @@ export class AppComponent {
     dueDate: new FormControl(new Date(), [Validators.required]),
     gender: new FormControl(null, [Validators.required]),
     checkbox: new FormControl(true, [Validators.requiredTrue]),
+    comment: new FormControl(null, [Validators.required]),
   });
 
   constructor(public translate: TranslateService) {}
